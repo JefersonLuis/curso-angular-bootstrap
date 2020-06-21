@@ -15,7 +15,7 @@
     <tr *ngFor="let curso of cursos">
       <td>{{curso.id}}</td>
       <td>{{curso.nome}}</td>
-      <td>{{curso.imagemUrl}}</td>
+      <td><img [src]="curso.imagemUrl" width="40" height="40"></td>
       <td>{{curso.preco}}</td>
       <td>{{curso.codigo}}</td>
       <td>{{curso.duracao}}</td>
