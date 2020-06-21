@@ -1,6 +1,7 @@
 export class Curso {
   id: number;
   nome: string;
+  descricao: string;
   imagemUrl: string;
   preco: number;
   codigo: string;
