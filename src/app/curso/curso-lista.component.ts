@@ -19,7 +19,7 @@ export class CursoListaComponent implements OnInit {
         preco: 99.99,
         codigo: 'XPS-8596',
         duracao: 120,
-        avaliacao: 4.4,
+        avaliacao: 5.0,
         lancamentoData: 'Novembro, 17, 2020'
       }
       ,
@@ -30,12 +30,9 @@ export class CursoListaComponent implements OnInit {
         preco: 45.99,
         codigo: 'XPS-8596',
         duracao: 120,
-        avaliacao: 4.4,
+        avaliacao: 2.5,
         lancamentoData: 'Novembro, 30, 2020'
       }
-
-    ]
-
+    ];
   }
-
 }

@@ -19,7 +19,9 @@
       <td>{{curso.preco}}</td>
       <td>{{curso.codigo}}</td>
       <td>{{curso.duracao}}</td>
-      <td>{{curso.avaliacao}}</td>
+      <td>
+          <app-star [nota]="curso.avaliacao"></app-star>
+      </td>
       <td>{{curso.lancamentoData}}</td>
     </tr>
   </tbody>
