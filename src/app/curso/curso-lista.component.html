@@ -31,6 +31,9 @@
           <app-star [nota]="curso.avaliacao"></app-star>
       </td>
       <td>{{curso.lancamentoData | date: 'dd/MM/yyyy'}}</td>
+      <td>
+          <a [routerLink]="['/cursos/consulta',curso.id]" class="btn btn-primary">Edit</a>
+      </td>
     </tr>
   </tbody>
 </table>

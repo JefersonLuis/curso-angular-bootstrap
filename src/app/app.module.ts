@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 
 import { Error404Component } from './error-404/error-404.component';
 import { CursoListaComponent } from './curso/curso-lista.component';
+import { CursoConsultaComponent } from './curso/curso-consulta.component';
 import { StarComponent } from './star/star.component';
 import { ReplacePipe } from './pipe/replace.pipe';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -18,6 +19,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
   declarations: [
     AppComponent,
     CursoListaComponent,
+    CursoConsultaComponent,
     StarComponent,
     ReplacePipe,
     NavBarComponent,
@@ -28,10 +30,13 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     FormsModule,
     RouterModule.forRoot([
        {
-        path: '', redirectTo: 'cursos', pathMatch: 'full'
+         path: 'cursos', component: CursoListaComponent
        },
        {
-         path: 'cursos', component: CursoListaComponent
+         path: 'cursos/consulta/:id', component: CursoConsultaComponent
+       },
+       {
+        path: '', redirectTo: 'cursos', pathMatch: 'full'
        },
        {
          path: '**', component: Error404Component
