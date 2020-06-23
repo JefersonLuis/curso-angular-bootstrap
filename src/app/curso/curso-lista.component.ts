@@ -5,7 +5,7 @@ import { Curso } from './curso';
 import { CursoService } from './curso.service';
 
 @Component({
-  selector: 'app-curso-lista',
+  //selector: 'app-curso-lista', nao utiliza mais pois esta utilizando router
   templateUrl: './curso-lista.component.html'
 } )
 export class CursoListaComponent implements OnInit {

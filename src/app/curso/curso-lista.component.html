@@ -25,12 +25,12 @@
       <td>{{curso.nome}}</td>
       <td><img [src]="curso.imagemUrl" width="40" height="40"></td>
       <td>{{curso.preco}}</td>
-      <td>{{curso.codigo}}</td>
+      <td>{{curso.codigo | lowercase | replace : '-' : ' ' }}</td>
       <td>{{curso.duracao}}</td>
       <td>
           <app-star [nota]="curso.avaliacao"></app-star>
       </td>
-      <td>{{curso.lancamentoData}}</td>
+      <td>{{curso.lancamentoData | date: 'dd/MM/yyyy'}}</td>
     </tr>
   </tbody>
 </table>
