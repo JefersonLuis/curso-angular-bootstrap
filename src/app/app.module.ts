@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 
 import { Error404Component } from './error-404/error-404.component';
 import { CursoListaComponent } from './curso/curso-lista.component';
-import { CursoConsultaComponent } from './curso/curso-consulta.component';
+import { CursoCadastroComponent } from './curso/curso-cadastro.component';
 import { StarComponent } from './star/star.component';
 import { ReplacePipe } from './pipe/replace.pipe';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -19,7 +19,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
   declarations: [
     AppComponent,
     CursoListaComponent,
-    CursoConsultaComponent,
+    CursoCadastroComponent,
     StarComponent,
     ReplacePipe,
     NavBarComponent,
@@ -33,7 +33,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
          path: 'cursos', component: CursoListaComponent
        },
        {
-         path: 'cursos/consulta/:id', component: CursoConsultaComponent
+         path: 'cursos/cadastro/:id', component: CursoCadastroComponent
        },
        {
         path: '', redirectTo: 'cursos', pathMatch: 'full'
