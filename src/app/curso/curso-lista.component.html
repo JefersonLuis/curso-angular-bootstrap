@@ -13,10 +13,11 @@
     <th>Id</th>
     <th>Nome</th>
     <th>Imagem</th>
-    <th>Preço</th>,
+    <th>Preço</th>
     <th>Codigo</th>
     <th>Duração</th>
     <th>Avaliação</th>
+    <th>Lançamento</th>
     <th>Opções</th>
   </thead>
   <tbody>
@@ -32,7 +33,8 @@
       </td>
       <td>{{curso.lancamentoData | date: 'dd/MM/yyyy'}}</td>
       <td>
-          <a [routerLink]="['/cursos/cadastro',curso.id]" class="btn btn-primary">Edit</a>
+          <a [routerLink]="['/cursos/cadastro',curso.id]" class="btn btn-primary nr-2">Editar</a>
+          <button (click)="apagaPorId(curso.id)" class="btn btn-danger">Apagar</button>
       </td>
     </tr>
   </tbody>

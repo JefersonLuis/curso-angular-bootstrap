@@ -4,9 +4,9 @@ import { NgModule, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-
 import { Error404Component } from './error-404/error-404.component';
 import { CursoListaComponent } from './curso/curso-lista.component';
 import { CursoCadastroComponent } from './curso/curso-cadastro.component';
@@ -28,6 +28,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
        {
          path: 'cursos', component: CursoListaComponent

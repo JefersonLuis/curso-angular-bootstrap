@@ -1,24 +1,38 @@
+import { HttpClient } from '@angular/common/http';
 import { Curso } from './curso';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class CursoService {
-  buscaCursos(): Curso[] {
-    return CURSOS;
+
+  private cursoUrl: string = 'http://localhost:3100/api/cursos';
+
+  constructor(private httpClient: HttpClient) { }
+
+  buscaCursos(): Observable<Curso[]> {
+    return this.httpClient.get<Curso[]>(this.cursoUrl);
   }
 
-  buscaCursosPorId(id: number): Curso {
-    return CURSOS.find((cursoIntereator: Curso) => cursoIntereator.id === id);
+  buscaCursosPorId(id: number): Observable<Curso> {    
+    let url_local = `${this.cursoUrl}/+${id}` ;
+    return this.httpClient.get<Curso>(url_local);
+    console.log('busca curso por id'+url_local);
   }
 
-  salva(curso: Curso): void {
-    if (curso.id) {
-      const index = CURSOS.findIndex((cursoIterator: Curso) => cursoIterator.id=== curso.id );
-      CURSOS[index] = curso;
+  salva(curso: Curso): Observable <Curso> {
+    if ( curso.id ) {
+      return this.httpClient.put<Curso>(`${this.cursoUrl}/${curso.id}`, curso) ;      
+    } else {
+      return this.httpClient.post<Curso>(`${this.cursoUrl}`, curso); 
     }
+  }
+
+  apagaPorId(id: number): Observable<any> {
+    return this.httpClient.delete<any>(`${this.cursoUrl}/${id}`);
   }
 
 }

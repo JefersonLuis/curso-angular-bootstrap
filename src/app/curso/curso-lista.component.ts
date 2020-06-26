@@ -19,9 +19,27 @@ export class CursoListaComponent implements OnInit {
   constructor(private cursoService: CursoService){ }
 
   ngOnInit(): void {
-    this._cursos = this.cursoService.buscaCursos();
-    this._filtradoCursos = this._cursos;
+    this.buscaCursos();
+  }
 
+  buscaCursos(): void {
+    this.cursoService.buscaCursos().subscribe({
+      next: cursos => {
+        this._cursos = cursos;
+        this._filtradoCursos = this._cursos;
+      },
+      error: err => console.log('Error', err)
+    });
+  }
+
+  apagaPorId(cursoId:number):void{
+    this.cursoService.apagaPorId(cursoId).subscribe({
+      next: () =>{
+        console.log('Apagar com sucesso');
+        this.buscaCursos();
+      },
+      error: err => console.log('Error', err)      
+    })
   }
 
   set filtro(value: string) {
@@ -32,4 +50,5 @@ export class CursoListaComponent implements OnInit {
   get filtro() {
     return this._filtrarPor ;
   }
+
 }
