@@ -5,20 +5,21 @@ import { RouterModule } from '@angular/router';
 import { CursoListaComponent } from './curso-lista.component';
 import { CursoCadastroComponent } from './curso-cadastro.component';
 
-import { StarComponent } from '../star/star.component';
-import { ReplacePipe } from '../pipe/replace.pipe';
+
 import { CommonModule} from '@angular/common'
+import { StarModule } from '../shared/component/star/star.module';
+import { AppPipeModule } from '../shared/pipe/app-pipe.module';
 
 @NgModule({
   declarations: [
     CursoListaComponent,
     CursoCadastroComponent,
-    StarComponent,
-    ReplacePipe,    
   ],
   imports: [
     CommonModule,
     FormsModule,    
+    StarModule,
+    AppPipeModule,
     RouterModule.forChild([
        {
          path: 'cursos', component: CursoListaComponent
@@ -30,5 +31,5 @@ import { CommonModule} from '@angular/common'
   ]  
 })
 export class CursoModule { 
-    
+
 }
