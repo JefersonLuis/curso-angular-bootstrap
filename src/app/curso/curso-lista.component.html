@@ -1,4 +1,4 @@
-<h2>Curso Listagem</h2>
+<h2>Curso Listagem </h2>
 
 <div class="form-group row">
   <label class="col-sm-2 col-form-label" >Filtrar por</label>
@@ -7,7 +7,7 @@
   </div>
 </div>
 
-
+<button class="btn btn-danger" style="width:100px" (click)="inserirCurso()"> Inserir Curso</button>
 <table class="table table-striped">
   <thead>
     <th>Id</th>
@@ -18,7 +18,7 @@
     <th>Duração</th>
     <th>Avaliação</th>
     <th>Lançamento</th>
-    <th>Opções</th>
+    <th>Opções  </th>
   </thead>
   <tbody>
     <tr *ngFor="let curso of _filtradoCursos">

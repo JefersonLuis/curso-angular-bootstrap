@@ -4,19 +4,21 @@ import { FormsModule } from '@angular/forms';
 import { Curso } from './curso';
 import { CursoService } from './curso.service';
 
+import {Router} from "@angular/router";
+
+
 @Component({
   //selector: 'app-curso-lista', nao utiliza mais pois esta utilizando router
   templateUrl: './curso-lista.component.html'
 } )
 export class CursoListaComponent implements OnInit {
-
   _filtrarPor: string;
   _filtradoCursos: Curso[] = [];
   _cursos: Curso[] = [];
 
   cursos: Curso[] = [] ;
 
-  constructor(private cursoService: CursoService){ }
+  constructor(private router: Router, private cursoService: CursoService){ }
 
   ngOnInit(): void {
     this.buscaCursos();
@@ -50,5 +52,9 @@ export class CursoListaComponent implements OnInit {
   get filtro() {
     return this._filtrarPor ;
   }
+
+  inserirCurso(): void {
+    this.router.navigate(['/cursos/cadastro']);
+  };
 
 }
